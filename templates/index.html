@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <title> ML Bikes Rented Predictor </title>
+</head>
+<body>
+    <h1> ML Bikes Rented Predictor </h1>
+    <h2> Created by: Alex Lindberg </h2>
+    <h3> Enter the following inputs: </h3>
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="season" placeholder="Season" required="required"/> 
+        <label> * Spring = 1, Summer = 2, Fall = 3, Winter = 4 </label> <br>
+        <input type="text" name="year" placeholder="Year" required="required" />
+        <label> * 2011 = 0, 2012 = 1, 2013 = 2, ... , 2022 = 11 </label> <br>
+        <input type="text" name="month" placeholder="Month (1-12)" required="required" /> <br>
+        <input type="text" name="holiday" placeholder="Holiday? (1 or 0)" required="required" /> <br>
+        <input type="text" name="day" placeholder="Day of Week (1-7)" required="required" /> <br>
+        <input type="text" name="workday" placeholder="Workday? (1 or 0)" required="required" /> <br>
+        <input type="text" name="weather" placeholder="Weather" required="required" />
+        <label> * Clear or Few Clouds = 1, Mist or Cloudy = 2, Light Snow or Rain = 3, Heavy Rain or Snow or Thunder = 4 </label> <br>
+        <input type="text" name="real_temp" placeholder="Real Temperature (C)" required="required" /> <br>
+        <input type="text" name="feels_like" placeholder="Feels like Temp (C)" required="required" /> <br>
+        <input type="text" name="humidity" placeholder="Humidity % (decimal)" required="required" /> <br>
+        <input type="text" name="windspeed" placeholder="Windspeed (mph)" required="required" /> <br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+    <br>
+    <br>
+    {{ prediction_text }}
+</body>
+</html>
